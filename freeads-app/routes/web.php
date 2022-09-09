@@ -18,12 +18,11 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/article',[ArticleController::class,"index"])->name('home');
-Route::get('/user',[UserController::class,"index"])->name('home');
+Route::get('/article',[ArticleController::class,"index"])->name('article');
+//Route::get('/article',[ArticleController::class,"create"])->name('home');
+Route::get('/profile',[UserController::class,"index"])->name('profile');
 
 Auth::routes(['verify' => true]);
 

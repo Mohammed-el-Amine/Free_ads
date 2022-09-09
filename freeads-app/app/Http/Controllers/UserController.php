@@ -14,8 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $articles = User::all();
-        return view("user") ;
+        $user = User::all();
+        //dump(auth()->user()->name);
+        $name = auth()->user()->name;
+        return view("profile",['name'=>$name]) ;
     }
 
     /**

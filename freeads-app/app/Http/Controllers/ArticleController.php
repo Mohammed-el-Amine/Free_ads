@@ -14,15 +14,16 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //fonctionne pour la creation d'article
-        // $c = new Article;
-        // $c->content = "momo";
-        // $c->title="first art";
-        // $c->picture="12.jpg";
-        // $c->save();
 
+        // $c = new Article;
+        // $c->content = "je suis le post a nathan";
+        // $c->title="2nd post";
+        // $c->picture="marius.jpeg";
+        // $c->save();
         $articles = Article::all();
-        return view("article") ;
+        //return dump($articles);
+        $name = auth()->user()->name;
+        return dump(view("article",['name'=>$name]) );
     }
 
     /**
@@ -32,6 +33,14 @@ class ArticleController extends Controller
      */
     public function create($request)
     {
+         //fonctionne pour la creation d'article
+        //  $c = new Article;
+        //  $c->content = "je suis le post a nathan";
+        //  $c->title="2nd post";
+        //  $c->picture="marius.jpeg";
+        //  $c->save();
+
+
             $create = new Article;
             $create->content = $request->content;
             $create->title = $request->title;
