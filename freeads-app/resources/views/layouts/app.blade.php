@@ -38,13 +38,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else
@@ -54,17 +54,18 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
+                                    <a class="dropdown-item" href="{{route('home')}}" onclick="">
+                                    Acceuil</a>
                                     <a class="dropdown-item" href="{{route('profile')}}" onclick="">
-                                        {{-- {{__('profile')}} --}}
                                     Profile</a>
                                     <a class="dropdown-item" href="{{route('article')}}" onclick="">
-                                        {{-- {{__('profile')}} --}}
                                     Annonces</a>
+                                    <a class="dropdown-item" href="{{route('deposer_une_annonce')}}" onclick="">
+                                    Déposer une annonce</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Déconnexion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

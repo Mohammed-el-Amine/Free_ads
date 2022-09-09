@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ __('Publier une annonce ? click juste') }} <a href="deposer_une_annonce">ici</a>
+                    {{ __('Publier une annonce ? click juste') }} <a href="deposer_une_annonce">ici</a> 
 
                 </div>
             </div>

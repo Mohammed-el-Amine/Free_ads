@@ -24,9 +24,14 @@ class AnnoncesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($request)
     {
-        //
+        $create = new Annonces;
+            $create->content = $request->content;
+            $create->title = $request->title;
+            $create->picture = $request->picture;
+            $create->save();
+            return $request;
     }
 
     /**
