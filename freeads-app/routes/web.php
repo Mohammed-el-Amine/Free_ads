@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\App;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AnnoncesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,10 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/article',[ArticleController::class,"index"])->name('article');
+Route::get('/annonces',[ArticleController::class,"index"])->name('article');
 //Route::get('/article',[ArticleController::class,"create"])->name('home');
 Route::get('/profile',[UserController::class,"index"])->name('profile');
 
 Auth::routes(['verify' => true]);
-
+Route::get('/deposer_une_annonce',[AnnoncesController::class,"index"])->name('deposer_une_annonce');
 Route::get('/home', [HomeController::class, 'index'])->name('home');

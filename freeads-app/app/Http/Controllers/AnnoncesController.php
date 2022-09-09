@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Annonces;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class AnnoncesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::all();
-        //dump(auth()->user()->name);
+        //
         $name = auth()->user()->name;
-        // $email=auth()->email()->email;
-        // $password=auth()->password()->password;
-
-
-
-        return view("profile",['name'=>$name]) ;
+        return view('deposer_une_annonce',['name'=>$name]);
     }
 
     /**
@@ -49,10 +43,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Annonces  $annonces
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Annonces $annonces)
     {
         //
     }
@@ -60,10 +54,10 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Annonces  $annonces
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Annonces $annonces)
     {
         //
     }
@@ -72,10 +66,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Annonces  $annonces
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Annonces $annonces)
     {
         //
     }
@@ -83,10 +77,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Annonces  $annonces
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Annonces $annonces)
     {
         //
     }

@@ -23,7 +23,7 @@ class ArticleController extends Controller
         $articles = Article::all();
         //return dump($articles);
         $name = auth()->user()->name;
-        return dump(view("article",['name'=>$name]) );
+        return view("article",['name'=>$name]);
     }
 
     /**

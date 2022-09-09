@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Acceuil') }}</div>
+                <div class="card-header">{{ __('Deposer une annonce') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Bienvenue à toi ')}} <user><b>{{ucfirst($name)}}</b></user>{{" !"}}
+                    {{ __('Merci à toi ')}} <user><b>{{ucfirst($name)}}</b></user>{{", nous éspérons que ton annonce aura du succès ✨✨✨"}}
                 </div>
             </div>
         </div>
