@@ -13,8 +13,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ __('Publier une annonce ? click juste') }} <a href="deposer_une_annonce">ici</a> 
+                    {{ __('Publier une annonce ? click juste') }} <a href="deposer_une_annonce">ici</a><br>
+                </div>
+            </div><br>
 
+            <div class="card">
+                <div class="card-body">
+                    {{-- {{$annonce}} --}}
+                    @foreach ($annonce as $publication)<br>
+                    <div class="card-header">{{"Publié par ".$name." le $publication[created_at]"}}</div><br><br>
+                    {{"Titre : ".$publication['title']}}<br>
+                    {{"Votre image : ".$publication['picture']}}<br>
+                    {{"Votre annonce : ".$publication['content']}}<br><br>
+                    {{"Dèrnière modification le : ".$publication['updated_at']}}<br>
+                    @endforeach
                 </div>
             </div>
         </div>

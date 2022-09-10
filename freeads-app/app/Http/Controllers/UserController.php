@@ -17,12 +17,13 @@ class UserController extends Controller
         $user = User::all();
         //dump(auth()->user()->name);
         $name = auth()->user()->name;
+        $mail = auth()->user()->email;
         // $email=auth()->email()->email;
         // $password=auth()->password()->password;
 
 
 
-        return view("profile",['name'=>$name]) ;
+        return view("profile",['name'=>$name,"email"=>$mail]) ;
     }
 
     /**
